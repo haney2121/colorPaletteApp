@@ -7,3 +7,27 @@
   display: flex; 
   flex-wrap: wrap;
 }
+
+.slider {
+  width: 340px; 
+  margin: 0 10px; 
+  display: inline-block;
+}
+
+.rc-slider-track {
+  background-color: transparent;
+}
+
+.rc-slider-rail {
+  height: 8px;
+}
+
+.rc-slider-handle:active, .rc-slider-handle:hover, .rc-slider-handle:focus, .rc-slider-handle {
+  background: green;
+  border: 2px solid green;
+  box-shadow: none;
+  outline: none;
+  width: 15px;
+  height: 15px; 
+  margin: -4px 0 0 -7px;
+}
