@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500');
+
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 6vh;
+}
+
+.logo{
+  margin: 0 15px 0 0;
+  padding: 0 13px;
+  font-size: 22px;
+  background: #30404F;  
+  font-family: Roboto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.slider {
+  width: 340px; 
+  margin: 0 10px; 
+  display: inline-block;
+}
+
+.rc-slider-track {
+  background-color: transparent;
+}
+
+.rc-slider-rail {
+  height: 8px;
+}
+
+.rc-slider-handle:active, .rc-slider-handle:hover, .rc-slider-handle:focus, .rc-slider-handle {
+  background: green;
+  border: 2px solid green;
+  box-shadow: none;
+  outline: none;
+  width: 15px;
+  height: 15px; 
+  margin: -4px 0 0 -7px;
+}
