@@ -6,7 +6,7 @@ import seedColors from '../helpers/seedColors';
 const App = () => {
   return (
     <div>
-      <Palette {...seedColors[4]} />
+      <Palette {...seedColors[1]} />
     </div>
   );
 }
