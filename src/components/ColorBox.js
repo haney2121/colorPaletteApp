@@ -14,7 +14,7 @@ const ColorBox = props => {
     }, 2000);
   }
 
-  const { name, background } = props;
+  const { name, background, id, paletteId, showLink } = props;
   return (
     <CopyToClipboard text={background} onCopy={changeCopyState}>
       <div className="ColorBox" style={{ background: background }}>
@@ -29,9 +29,11 @@ const ColorBox = props => {
           </div>
           <button className="copy-button">Copy</button>
         </div>
-        <Link to="/" onClick={e => e.stopPropagation()}>
-          <span className="see-more">More</span>
-        </Link>
+        {showLink && (
+          <Link to={`/palette/${paletteId}/${id}`} onClick={e => e.stopPropagation()}>
+            <span className="see-more">More</span>
+          </Link>
+        )}
       </div>
     </CopyToClipboard>
   )

@@ -8,14 +8,14 @@ const Palette = (props) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
 
-  const { paletteName, emoji, colors } = props.palette;
+  const { paletteName, emoji, colors, id } = props.palette;
 
   const changeFormat = (val) => {
     setFormat(val);
   }
 
   const colorBoxes = colors[level].map((color) => (
-    <ColorBox key={color.name} background={color[format]} name={color.name} />
+    <ColorBox key={color.id} background={color[format]} name={color.name} id={color.id} paletteId={id} showLink={true} />
   ))
 
   const changeLevel = (level) => {
