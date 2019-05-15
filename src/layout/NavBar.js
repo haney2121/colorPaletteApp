@@ -33,7 +33,7 @@ const NavBar = (props) => {
   return (
     <header className="NavBar">
       <div className="logo">
-        <Link exact to="/">reactcolorpicker</Link>
+        <Link to="/">reactcolorpicker</Link>
       </div>
       <div className="slider-container">
         <span>Level: {level}</span>
