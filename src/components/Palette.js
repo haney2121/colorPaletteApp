@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import NavBar from '../layout/NavBar';
 import ColorBox from './ColorBox';
+import PaletteFooter from '../layout/PaletteFooter';
 import '../styles/Palette.css';
 
 const Palette = (props) => {
@@ -25,14 +26,11 @@ const Palette = (props) => {
 
   return (
     <div className="Palette">
-      <NavBar changeLevel={changeLevel} level={level} changeFormat={changeFormat} />
+      <NavBar changeLevel={changeLevel} level={level} changeFormat={changeFormat} showSlider={true} />
       <div className="Palette-colors">
         {colorBoxes}
       </div>
-      <footer className="Palette-footer">
-        {paletteName}
-        <span className="emoji">{emoji}</span>
-      </footer>
+      <PaletteFooter paletteName={paletteName} emoji={emoji} />
     </div>
   )
 }

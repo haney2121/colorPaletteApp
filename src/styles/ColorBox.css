@@ -1,13 +1,17 @@
 .ColorBox {
-  width: 20%;
-  height: 25%;
-  margin: 0 auto;
+  flex: 100%;  
   display: inline-block;
   position: relative;
   cursor: pointer;
+  max-width: 384px;
 }
 
-.copy-button {
+.ColorBox.go-Back {
+  background: #000;
+  color: #fff;
+}
+
+.copy-button, .back-button {
   width: 100px;
   height: 30px;
   position: absolute;
@@ -24,6 +28,11 @@
   text-transform: uppercase;
   border: none;
   opacity: 0;
+  text-decoration: none;
+}
+
+.back-button {
+  opacity: 1;
 }
 
 .ColorBox:hover .copy-button{

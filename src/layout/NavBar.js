@@ -14,7 +14,7 @@ const NavBar = (props) => {
   const [format, setFormat] = useState('hex');
   const [open, setOpen] = useState(false);
 
-  const { level, changeLevel, changeFormat } = props;
+  const { level, changeLevel, changeFormat, showSlider } = props;
 
   const handleChange = (e) => {
     setFormat(e.target.value);
@@ -35,12 +35,14 @@ const NavBar = (props) => {
       <div className="logo">
         <Link to="/">reactcolorpicker</Link>
       </div>
-      <div className="slider-container">
-        <span>Level: {level}</span>
-        <div className="slider">
-          <Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
+      {showSlider && (
+        <div className="slider-container">
+          <span>Level: {level}</span>
+          <div className="slider">
+            <Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
+          </div>
         </div>
-      </div>
+      )}
       <div className="select-container">
         <Select value={format} onChange={handleChange}>
           <MenuItem value="hex">HEX - #fff</MenuItem>
