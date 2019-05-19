@@ -121,3 +121,10 @@
   font-size: 2rem;
   font-weight: 200;
 }
+
+.light-text{
+  color: #fff;
+}
+.dark-text {
+  color: #000;
+}
