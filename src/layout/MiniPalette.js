@@ -19,7 +19,6 @@ const styles = {
     width: "100%",
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection: 'column'
   },
   title: {
     display: 'flex',
@@ -39,7 +38,7 @@ const styles = {
     height: "25%",
     width: "20%",
     display: "inline-block",
-    margin: "0 auto",
+    margin: "0",
     position: "relative"
   }
 }

@@ -14,7 +14,7 @@ const styles = {
   },
   container: {
     width: '50%',
-    diplay: 'flex',
+    display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',
     flexWrap: 'wrap',
