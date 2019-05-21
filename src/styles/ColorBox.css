@@ -1,9 +1,8 @@
 .ColorBox {
-  flex: 100%;  
+  flex: 20%;  
   display: inline-block;
   position: relative;
   cursor: pointer;
-  max-width: 384px;
 }
 
 .ColorBox.go-Back {
@@ -127,4 +126,11 @@
 }
 .dark-text {
   color: #000;
+}
+
+@media only screen and (max-width: 900px) {
+  .ColorBox {flex: 50%;}
+}
+@media only screen and (max-width: 500px) {
+  .ColorBox {flex: 100%;}
 }

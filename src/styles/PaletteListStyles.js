@@ -1,3 +1,5 @@
+import sizes from '../helpers/sizes';
+
 const styles = {
   root: {
     background: '#30404F',
@@ -33,6 +35,9 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 30%)',
     gridGap: '5%'
+  },
+  [sizes.down('md')]: {
+    width: '50%'
   }
 }
 export default styles;
