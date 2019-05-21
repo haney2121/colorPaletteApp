@@ -1,18 +1,23 @@
-import { DRAWER_WIDTH } from '../constants';
+import { DRAWER_WIDTH } from "../constants";
+import sizes from "../helpers/sizes";
 
 const drawerWidth = DRAWER_WIDTH;
-
 const styles = theme => ({
+  root: {
+    display: "flex"
+  },
+  hide: {
+    display: "none"
+  },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    heighht: '64px'
-
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "64px"
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -27,17 +32,21 @@ const styles = theme => ({
     marginRight: 20
   },
   navBtns: {
-    marginRight: '1rem',
-    '& button': {
-      margin: '0 0.5rem'
+    marginRight: "1rem",
+    "& a": {
+      textDecoration: "none"
     },
-    '& a': {
-      textDecoration: 'none'
+    [sizes.down("xs")]: {
+      marginRight: "0.5rem"
     }
   },
-  hide: {
-    display: "none"
-  },
+  button: {
+    margin: "0 0.5rem",
+    [sizes.down("xs")]: {
+      margin: "0 0.2rem",
+      padding: "0.3rem"
+    }
+  }
 });
 
 export default styles;

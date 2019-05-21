@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton'
-import CloseIcon from '@material-ui/icons/Close';
 
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import '../styles/NavBar.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Slider from "rc-slider";
+
+import "rc-slider/assets/index.css";
+import styles from "../styles/NavBarStyles";
 
 const NavBar = (props) => {
   const [format, setFormat] = useState('hex');
   const [open, setOpen] = useState(false);
 
-  const { level, changeLevel, changeFormat, showSlider } = props;
+  const { level, changeLevel, changeFormat, showSlider, classes } = props;
 
   const handleChange = (e) => {
     setFormat(e.target.value);
@@ -31,19 +33,19 @@ const NavBar = (props) => {
   }
 
   return (
-    <header className="NavBar">
-      <div className="logo">
+    <header className={classes.Navbar}>
+      <div className={classes.logo}>
         <Link to="/">reactcolorpicker</Link>
       </div>
       {showSlider && (
-        <div className="slider-container">
+        <div>
           <span>Level: {level}</span>
-          <div className="slider">
+          <div className={classes.slider}>
             <Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
           </div>
         </div>
       )}
-      <div className="select-container">
+      <div className={classes.selectContainer}>
         <Select value={format} onChange={handleChange}>
           <MenuItem value="hex">HEX - #fff</MenuItem>
           <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -57,4 +59,4 @@ const NavBar = (props) => {
   )
 }
 
-export default NavBar;
+export default withStyles(styles)(NavBar);

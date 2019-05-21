@@ -4,11 +4,11 @@ import styles from '../styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const MiniPalette = props => {
-  const { classes, paletteName, emoji, colors, handleClick, removePalette, id } = props;
+  const { classes, paletteName, emoji, colors, handleClick, openDialog, id } = props;
 
   const deletePalette = e => {
     e.stopPropagation();
-    removePalette(id);
+    openDialog(id);
   }
 
   return (

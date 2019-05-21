@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
-import NavBar from '../layout/NavBar';
-import ColorBox from './ColorBox';
-import PaletteFooter from '../layout/PaletteFooter';
-import '../styles/Palette.css';
-import '../styles/ColorBox.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../layout/NavBar";
+import PaletteFooter from "../layout/PaletteFooter";
+import styles from "../styles/PaletteStyles";
+import { withStyles } from "@material-ui/styles";
+import ColorBox from "./ColorBox";
 
 const SingleColorPalette = props => {
   const [shades, setShades] = useState([]);
   const [format, setFormat] = useState('hex');
-  const { colorId, palette } = props;
+  const { colorId, palette, classes } = props;
 
   useEffect(() => {
     setShades(gatherShades(palette, colorId))
@@ -33,14 +32,14 @@ const SingleColorPalette = props => {
   }
 
   return (
-    <div className="Palette SingleColorPalette">
+    <div className={classes.Palette}>
       <NavBar changeFormat={changeFormat} />
-      <div className="Palette-colors">
+      <div className={classes.colors}>
         {shades.map(shade => (
           <ColorBox key={shade.name} name={shade.name} background={shade[format]} showLink={false} />
         ))}
-        <div className="go-Back ColorBox">
-          <Link className="back-button" to={`/palette/${palette.id}`}>
+        <div className={classes.goBack}>
+          <Link to={`/palette/${palette.id}`}>
             Go Back
           </Link>
         </div>
@@ -50,4 +49,4 @@ const SingleColorPalette = props => {
   )
 }
 
-export default SingleColorPalette;
+export default withStyles(styles)(SingleColorPalette);

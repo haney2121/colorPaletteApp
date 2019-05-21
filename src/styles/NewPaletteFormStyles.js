@@ -1,24 +1,24 @@
-import { DRAWER_WIDTH } from '../constants';
-
+import { DRAWER_WIDTH } from "../constants";
 const drawerWidth = DRAWER_WIDTH;
 
 const styles = theme => ({
   root: {
     display: "flex"
   },
-  hide: {
-    display: "none"
-  },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    height: "100vh"
   },
   drawerPaper: {
     width: drawerWidth,
+    display: "flex",
+    alignItems: "center"
   },
   drawerHeader: {
     display: "flex",
     alignItems: "center",
+    width: "100%",
     padding: "0 8px",
     ...theme.mixins.toolbar,
     justifyContent: "flex-end"
@@ -26,7 +26,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     height: "calc(100vh - 64px)",
-    padding: '0px',
+    padding: 0,
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -41,20 +41,18 @@ const styles = theme => ({
     marginLeft: 0
   },
   container: {
-    width: '90%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-    margin: '0 auto'
+    width: "90%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
   buttons: {
-    width: '100%',
-    margin: '1rem 0 0',
-    '& button': {
-      width: '50%'
-    }
+    width: "100%"
+  },
+  button: {
+    width: "50%"
   }
 });
 
