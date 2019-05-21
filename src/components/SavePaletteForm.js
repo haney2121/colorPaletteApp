@@ -45,6 +45,7 @@ class SavePaletteForm extends Component {
   }
   savePalette(newEmoji) {
     const newPalette = { paletteName: this.state.newPaletteName, emoji: newEmoji.native };
+    this.setState({ emojiOpen: false });
     this.props.handleSubmit(newPalette)
   }
 

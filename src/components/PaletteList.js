@@ -51,7 +51,10 @@ const PaletteList = props => {
             <CSSTransition key={palette.id} classNames="fade" timeout={500}>
               <MiniPalette
                 openDialog={openDialog}
-                handleClick={() => goToPalette(palette.id)} key={palette.id} id={palette.id} {...palette} />
+                goToPalette={goToPalette}
+                key={palette.id}
+                id={palette.id}
+                {...palette} />
             </CSSTransition>
           ))}
         </TransitionGroup>
