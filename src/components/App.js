@@ -4,6 +4,7 @@ import Palette from './Palette';
 import PaletteList from './PaletteList';
 import SingleColorPalette from './SingleColorPalette';
 import NewPaletteForm from './NewPaletteForm'
+import FourOFour from './FourOFour';
 import seedColors from '../helpers/seedColors';
 import { generatePalette } from '../helpers/colorHelpers';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -46,6 +47,7 @@ const App = () => {
             <Route exact path="/palette/new" render={(routeProps) => <Page><NewPaletteForm savePalette={savePalette} palettes={palettes} {...routeProps} /></Page>} />
             <Route exact path="/palette/:id" render={(routeProps) => <Page><Palette palette={generatePalette(findPalette(routeProps.match.params.id))} /></Page>} />
             <Route exact path="/palette/:paletteId/:colorId" render={(routeProps) => <Page><SingleColorPalette colorId={routeProps.match.params.colorId} palette={generatePalette(findPalette(routeProps.match.params.paletteId))} {...routeProps} /></Page>} />
+            <Route render={() => <FourOFour />} />
           </Switch>
         </CSSTransition>
       </TransitionGroup>
